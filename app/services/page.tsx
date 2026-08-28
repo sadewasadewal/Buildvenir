@@ -159,14 +159,14 @@ export default function ServicesPage() {
       <main className="page-shell pb-20 pt-28">
         <section className="mx-auto max-w-6xl px-5 md:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">Services</p>
-            <AnimatedTitle className="text-4xl font-semibold tracking-[-0.06em] text-slate-900 md:text-6xl">
-              Strategy <span className="brand-script text-[3.4rem] leading-[0.82] text-slate-900 md:text-[5rem]">→</span>{' '}
-              <span className="brand-script text-[3.2rem] leading-[0.9] text-slate-900 md:text-[5rem]">Build</span>{' '}
-              <span className="brand-script text-[3.4rem] leading-[0.82] text-slate-900 md:text-[5rem]">→</span> Deploy{' '}
-              <span className="brand-script text-[3.4rem] leading-[0.82] text-slate-900 md:text-[5rem]">→</span> Validate
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-slate-500">Services</p>
+            <AnimatedTitle className="text-4xl font-semibold tracking-[-0.06em] text-slate-900 dark:text-slate-100 md:text-6xl">
+              Strategy <span className="brand-script text-[3.4rem] leading-[0.82] text-slate-900 dark:text-slate-100 md:text-[5rem]">→</span>{' '}
+              <span className="brand-script text-[4rem] font-light tracking-[-0.02em] text-slate-900 dark:text-slate-100 md:text-[5rem]">build</span>{' '}
+              <span className="brand-script text-[3.4rem] leading-[0.82] text-slate-900 dark:text-slate-100 md:text-[5rem]">→</span> Deploy{' '}
+              <span className="brand-script text-[3.4rem] leading-[0.82] text-slate-900 dark:text-slate-100 md:text-[5rem]">→</span> Validate
             </AnimatedTitle>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 md:text-lg">
               We help startups and growing businesses bring ambitious digital products, cloud platforms, AI systems, and secure payment experiences to life.
             </p>
           </div>
@@ -185,39 +185,39 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`group flex h-full flex-col rounded-[18px] border p-5 text-left transition-all duration-300 ease-out md:p-6 ${
+                  className={`soft-card group flex h-full flex-col rounded-[18px] p-5 text-left transition-all duration-300 ease-out md:p-6 ${
                     isSelected
-                      ? 'border-slate-200 bg-slate-50 text-slate-900 shadow-[0_18px_40px_rgba(15,23,42,0.04)]'
-                      : 'border-slate-200 bg-white/80 text-slate-900 hover:border-slate-300 hover:bg-slate-50'
+                      ? 'bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100'
+                      : 'bg-white/80 text-slate-900 dark:bg-slate-950/60 dark:text-slate-100'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`text-[10px] font-semibold uppercase tracking-[0.24em] ${isSelected ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <span className={`text-[10px] font-semibold uppercase tracking-[0.24em] ${isSelected ? 'text-slate-500 dark:text-slate-400' : 'text-slate-400 dark:text-slate-500'}`}>
                       {service.number}
                     </span>
-                    <span className={`text-[10px] font-medium uppercase tracking-[0.22em] ${isSelected ? 'text-slate-500' : 'text-slate-500'}`}>
+                    <span className={`text-[10px] font-medium uppercase tracking-[0.22em] ${isSelected ? 'text-slate-500 dark:text-slate-400' : 'text-slate-500 dark:text-slate-400'}`}>
                       {service.id === 'wallet-payments' ? 'Core capability' : 'Service'}
                     </span>
                   </div>
 
                   <div className="mt-6">
-                    <h2 className="text-2xl font-semibold tracking-[-0.05em]">{service.title}</h2>
-                    <p className={`mt-3 text-sm leading-6 md:text-base ${isSelected ? 'text-slate-600' : 'text-slate-600'}`}>
+                    <h2 className="text-2xl font-semibold tracking-[-0.05em] dark:text-slate-100">{service.title}</h2>
+                    <p className={`mt-3 text-sm leading-6 md:text-base ${isSelected ? 'text-slate-600 dark:text-slate-300' : 'text-slate-600 dark:text-slate-300'}`}>
                       {service.short}
                     </p>
                   </div>
 
                   <div className="mt-5 flex flex-wrap gap-3">
                     {service.tools.slice(0, 4).map((Tool, index) => (
-                      <Tool key={`${service.id}-${index}`} className={`h-5 w-5 ${isSelected ? 'text-slate-700' : 'text-slate-700'}`} />
+                      <Tool key={`${service.id}-${index}`} className={`h-5 w-5 ${isSelected ? 'text-slate-700 dark:text-slate-200' : 'text-slate-700 dark:text-slate-200'}`} />
                     ))}
                   </div>
 
                   <div className="mt-6 flex items-center justify-between border-t border-current/10 pt-5">
-                    <span className={`text-sm font-medium ${isSelected ? 'text-slate-700' : 'text-slate-700'}`}>
+                    <span className={`text-sm font-medium ${isSelected ? 'text-slate-700 dark:text-slate-200' : 'text-slate-700 dark:text-slate-200'}`}>
                       Explore service
                     </span>
-                    <span className={`material-symbols-outlined text-2xl ${isSelected ? 'text-slate-900' : 'text-slate-900'}`}>
+                    <span className={`material-symbols-outlined text-2xl ${isSelected ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900 dark:text-slate-100'}`}>
                       {service.icon}
                     </span>
                   </div>
@@ -228,13 +228,13 @@ export default function ServicesPage() {
         </section>
 
         <section className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
-          <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_22px_50px_rgba(15,23,42,0.04)] md:p-8">
-            <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 md:flex-row md:items-end md:justify-between">
+          <div className="soft-card rounded-[28px] bg-white p-6 dark:bg-slate-900 md:p-8">
+            <div className="flex flex-col gap-4 border-b border-slate-200/80 pb-5 dark:border-slate-700/80 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">Active focus</p>
-                <h2 className="mt-2 text-3xl font-semibold tracking-[-0.05em] text-slate-900 md:text-4xl">{selectedService.title}</h2>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-slate-500">Active focus</p>
+                <h2 className="mt-2 text-3xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-slate-100 md:text-4xl">{selectedService.title}</h2>
               </div>
-              <div className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-600">
+              <div className="soft-pill rounded-full bg-slate-50 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-600 dark:bg-slate-950 dark:text-slate-300">
                 {selectedService.highlight}
               </div>
             </div>
@@ -243,14 +243,14 @@ export default function ServicesPage() {
               <div className="mt-8 space-y-8">
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
                   {selectedService.details?.map((detail, index) => (
-                    <div key={detail.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                      <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400">0{index + 1}</div>
-                      <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-900">{detail.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">{detail.desc}</p>
-                      <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                    <div key={detail.title} className="soft-card rounded-2xl bg-slate-50 p-5 dark:bg-slate-950">
+                      <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400 dark:text-slate-500">0{index + 1}</div>
+                      <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-900 dark:text-slate-100">{detail.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{detail.desc}</p>
+                      <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
                         {detail.capabilities.map((capability) => (
                           <li key={capability} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900" />
+                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900 dark:bg-slate-100" />
                             <span>{capability}</span>
                           </li>
                         ))}
@@ -259,26 +259,26 @@ export default function ServicesPage() {
                   ))}
                 </div>
 
-                <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 md:p-6">
-                  <h3 className="text-xl font-semibold tracking-[-0.04em] text-slate-900">Security Built Into Every Transaction</h3>
+                <div className="soft-card rounded-[24px] bg-slate-50 p-5 dark:bg-slate-950 md:p-6">
+                  <h3 className="text-xl font-semibold tracking-[-0.04em] text-slate-900 dark:text-slate-100">Security Built Into Every Transaction</h3>
                   <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                     {selectedService.security?.map((item) => (
-                      <div key={item} className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700">
+                      <div key={item} className="soft-card rounded-2xl bg-white px-3 py-2 text-sm text-slate-700 dark:bg-slate-900 dark:text-slate-200">
                         {item}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="rounded-[24px] border border-slate-200 bg-white p-5 md:p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">Tools & Technologies</p>
+                <div className="soft-card rounded-[24px] bg-white p-5 dark:bg-slate-900 md:p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-slate-500">Tools & Technologies</p>
                   <div className="mt-5 space-y-4">
                     {selectedService.technologyGroups?.map((group) => (
                       <div key={group.label}>
-                        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">{group.label}</p>
+                        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">{group.label}</p>
                         <div className="flex flex-wrap gap-3">
                           {group.items.map((Tool, index) => (
-                            <Tool key={`${group.label}-${index}`} className="h-5 w-5 text-slate-700" />
+                            <Tool key={`${group.label}-${index}`} className="h-5 w-5 text-slate-700 dark:text-slate-200" />
                           ))}
                         </div>
                       </div>
@@ -288,15 +288,15 @@ export default function ServicesPage() {
               </div>
             ) : (
               <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-                <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 md:p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">Service overview</p>
-                  <p className="mt-4 max-w-xl text-base leading-7 text-slate-700">
+                <div className="soft-card rounded-[24px] bg-slate-50 p-5 dark:bg-slate-950 md:p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 dark:text-slate-500">Service overview</p>
+                  <p className="mt-4 max-w-xl text-base leading-7 text-slate-700 dark:text-slate-300">
                     We bring together product thinking, system design, implementation, and delivery discipline so teams can launch better experiences with less operational risk.
                   </p>
-                  <ul className="mt-6 space-y-3 text-sm text-slate-700">
+                  <ul className="mt-6 space-y-3 text-sm text-slate-700 dark:text-slate-200">
                     {selectedService.details?.map((item) => (
                       <li key={item.title} className="flex items-start gap-3">
-                        <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-semibold text-white">
+                        <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-semibold text-white dark:bg-slate-100 dark:text-slate-900">
                           {selectedService.details.indexOf(item) + 1}
                         </span>
                         <span>{item.title}</span>
@@ -308,7 +308,7 @@ export default function ServicesPage() {
                       'Monitoring and optimization',
                     ].map((item, index) => (
                       <li key={item} className="flex items-start gap-3">
-                        <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-semibold text-white">
+                        <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-semibold text-white dark:bg-slate-100 dark:text-slate-900">
                           {index + 1}
                         </span>
                         <span>{item}</span>
@@ -317,11 +317,11 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                <div className="rounded-[18px] border border-slate-200 bg-white p-5 md:p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">Tools & Technologies</p>
+                <div className="soft-card rounded-[18px] bg-white p-5 dark:bg-slate-900 md:p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-slate-500">Tools & Technologies</p>
                   <div className="mt-5 flex flex-wrap gap-3">
                     {selectedService.tools.map((Tool, index) => (
-                      <Tool key={`${selectedService.id}-tool-${index}`} className="h-5 w-5 text-slate-700" />
+                      <Tool key={`${selectedService.id}-tool-${index}`} className="h-5 w-5 text-slate-700 dark:text-slate-200" />
                     ))}
                   </div>
                 </div>

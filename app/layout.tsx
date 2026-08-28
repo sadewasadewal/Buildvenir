@@ -1,6 +1,7 @@
 import './globals.css';
 import { Great_Vibes, Inter } from 'next/font/google';
 import type { Metadata } from 'next';
+import { ThemeProvider } from '../components/ThemeProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,8 +21,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('buildvenir-theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  const isDark = savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark);
+                  document.documentElement.classList.toggle('dark', isDark);
+                  document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+                } catch (error) {}
+              })();
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -29,7 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.variable} ${greatVibes.variable} bg-white text-on-surface antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${greatVibes.variable} bg-white text-slate-900 antialiased transition-colors dark:bg-slate-950 dark:text-slate-100`}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

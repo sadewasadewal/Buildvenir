@@ -30,12 +30,12 @@ export default function CaseStudiesPage() {
       <main className="page-shell pb-20 pt-28">
         <section className="mx-auto max-w-6xl px-5 md:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Case studies</p>
-            <AnimatedTitle className="text-4xl font-semibold tracking-[-0.06em] text-slate-900 md:text-6xl">
-              <span className="brand-script text-[3.5rem] font-light tracking-[-0.02em] text-slate-900 md:text-[5rem]">systems</span>. Measurable impact.
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Case studies</p>
+            <AnimatedTitle className="text-4xl font-semibold tracking-[-0.06em] text-slate-900 dark:text-slate-100 md:text-6xl">
+              <span className="brand-script text-[3.5rem] font-light tracking-[-0.02em] text-slate-900 dark:text-slate-100 md:text-[5rem]">systems</span>. Measurable impact.
             </AnimatedTitle>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              We work best with teams that need technology to make <span className="brand-script text-[2rem] font-light leading-none text-slate-900">growth</span>, compliance, and operations simpler—not more complicated.
+            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
+              We work best with teams that need technology to make <span className="brand-script text-[2rem] font-light leading-none text-slate-900 dark:text-slate-100">growth</span>, compliance, and operations simpler—not more complicated.
             </p>
           </div>
         </section>
@@ -43,22 +43,22 @@ export default function CaseStudiesPage() {
         <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
           <div className="space-y-6">
             {stories.map((story) => (
-              <article key={story.company} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_12px_40px_rgba(15,23,42,0.03)] md:p-8">
+              <article key={story.company} className="soft-card rounded-[28px] bg-white p-7 dark:bg-slate-900 md:p-8">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                   <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">{story.company}</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-900">{story.result}</h2>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">{story.company}</p>
+                    <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-slate-100">{story.result}</h2>
                   </div>
-                  <Link href="/contact" className="inline-flex rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+                  <Link href="/contact" className="soft-button-secondary inline-flex rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition dark:text-slate-200">
                     Discuss a similar project
                   </Link>
                 </div>
 
-                <p className="mt-6 max-w-3xl text-base leading-7 text-slate-600">{story.summary}</p>
+                <p className="mt-6 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">{story.summary}</p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   {story.metrics.map((metric) => (
-                    <span key={metric} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-slate-600">
+                    <span key={metric} className="soft-pill rounded-full bg-slate-50 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-slate-600 dark:bg-slate-950 dark:text-slate-300">
                       {metric}
                     </span>
                   ))}

@@ -35,26 +35,26 @@ export default function HomePage() {
                 />
               </div>
 
-              <h1 className="max-w-xl text-4xl font-semibold tracking-[-0.06em] text-slate-900 md:text-6xl">
+              <h1 className="max-w-xl text-4xl font-semibold tracking-[-0.06em] text-slate-900 dark:text-slate-100 md:text-6xl">
                 <motion.span
                   initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.96 }}
                   animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
                   transition={{ duration: 0.9, ease: 'easeOut' }}
                   className="inline-block"
                 >
-                  The <span className="brand-script text-[4rem] font-light tracking-[-0.02em] text-slate-900 md:text-[5rem]">architecture</span> of modern capital.
+                  The <span className="brand-script text-[4rem] font-light tracking-[-0.02em] text-slate-900 dark:text-slate-100 md:text-[5rem]">architecture</span> of modern capital.
                 </motion.span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
                 We design calm, secure infrastructure for the teams moving money, products, and trust at scale.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/services" className="inline-flex rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-700">
+                <Link href="/services" className="soft-button inline-flex rounded-full bg-[#6659e9] px-5 py-3 text-sm font-medium text-white transition duration-200 hover:bg-[#3d358c] hover:text-white dark:bg-[#6659e9] dark:hover:bg-[#3d358c]">
                   Explore services
                 </Link>
-                <Link href="/security" className="inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+                <Link href="/security" className="soft-button-secondary inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-slate-700 transition dark:bg-slate-900 dark:text-slate-200">
                   Security overview
                 </Link>
               </div>
@@ -77,8 +77,8 @@ export default function HomePage() {
 
         <motion.section id="services" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="mx-auto max-w-6xl px-5 py-20 md:px-8">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">What we do</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-900 md:text-5xl">Minimal complexity. Maximum confidence.</h2>
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">What we do</p>
+            <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-slate-100 md:text-5xl">Minimal complexity. Maximum confidence.</h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -89,59 +89,56 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.03)]"
+                className="soft-card rounded-3xl p-6"
               >
-                <span className="material-symbols-outlined mb-5 block text-3xl text-slate-900">{item.icon}</span>
-                <h3 className="mb-3 text-xl font-semibold text-slate-900">{item.title}</h3>
-                <p className="text-base leading-7 text-slate-600">{item.text}</p>
+                <span className="material-symbols-outlined mb-5 block text-3xl text-slate-900 dark:text-slate-100">{item.icon}</span>
+                <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
+                <p className="text-base leading-7 text-slate-600 dark:text-slate-300">{item.text}</p>
               </motion.div>
             ))}
           </div>
         </motion.section>
 
         <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8">
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <div>
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Why people choose us</p>
-              <h2 className="max-w-lg text-3xl font-semibold tracking-[-0.05em] text-slate-900 md:text-5xl">Calm systems for high-stakes work.</h2>
-              <ul className="mt-8 space-y-4 text-base text-slate-600">
-                {[
-                  'Security and governance built into the first draft.',
-                  'Clear operational workflows for teams that need trust and speed.',
-                  'Design language that feels premium but remains deeply practical.',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined mt-0.5 text-xl text-slate-900">check_circle</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <PhotoCarousel />
+          <div className="mb-10 text-center">
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Recent projects</p>
+            <motion.h2
+              initial={{ opacity: 0, filter: 'blur(12px)', scale: 0.96 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="text-3xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-slate-100 md:text-5xl"
+            >
+              Selected work from the <span className="brand-script text-[4rem] font-light tracking-[-0.02em] text-slate-900 dark:text-slate-100 md:text-[5rem]"> studio</span>
+            </motion.h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 dark:text-slate-300">
+              A snapshot of the modern systems, product experiences, and operational clarity we build for ambitious teams.
+            </p>
           </div>
+
+          <PhotoCarousel />
         </section>
 
-        <section className="bg-white py-20">
+        <section className="bg-white py-20 dark:bg-slate-950">
           <div className="mx-auto max-w-6xl px-5 md:px-8">
             <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Performance</p>
-                <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-900 md:text-5xl">A focused delivery model.</h2>
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Performance</p>
+                <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-slate-100 md:text-5xl">A focused delivery model.</h2>
               </div>
-              <Link href="/about" className="inline-flex rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+              <Link href="/about" className="soft-button-secondary inline-flex rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition dark:text-slate-200">
                 About the studio
               </Link>
             </div>
 
             <div className="grid gap-5 md:grid-cols-3">
               {credentials.map((item) => (
-                <div key={item.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm">
+                <div key={item.title} className="soft-card rounded-3xl bg-slate-50 p-6 dark:bg-slate-900">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm dark:bg-slate-950 dark:text-slate-100">
                     <span className="material-symbols-outlined">{item.icon}</span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-slate-900">{item.title}</h3>
-                  <p className="text-base leading-7 text-slate-600">{item.text}</p>
+                  <h3 className="mb-2 text-xl font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
+                  <p className="text-base leading-7 text-slate-600 dark:text-slate-300">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -153,10 +150,10 @@ export default function HomePage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">Start a project</p>
             <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-[-0.05em] md:text-5xl"><span className="brand-script text-[3rem] font-light tracking-[-0.02em] text-white md:text-[4.5rem]">build </span> a cleaner system for your next chapter.</h2>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/services" className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-slate-900 transition hover:bg-slate-100">
+              <Link href="/services" className="soft-button inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-slate-900 transition hover:bg-slate-100">
                 Explore solutions
               </Link>
-              <a href="mailto:hello@buildvenir.com" className="inline-flex rounded-full border border-slate-600 px-5 py-3 text-sm font-medium text-white transition hover:border-slate-500 hover:bg-slate-800">
+              <a href="mailto:hello@buildvenir.com" className="soft-button-secondary inline-flex rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-black transition hover:bg-slate-700">
                 hello@buildvenir.com
               </a>
             </div>
