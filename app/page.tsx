@@ -29,7 +29,7 @@ export default function HomePage() {
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <div className="mb-6 flex items-center pt-4 md:pt-8">
                 <img
-                  src="/Images/31f9a486-61c0-40e6-afca-979f141720b3.png"
+                  src="/images/31f9a486-61c0-40e6-afca-979f141720b3.png"
                   alt="Buildvenir logo"
                   className="h-14 w-auto object-contain md:h-16"
                 />

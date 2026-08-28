@@ -31,13 +31,13 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <Link href="/" className="flex items-center gap-1.5 p-0">
+        <Link href="/" className="flex items-center gap-1 p-0">
           <img
-            src="/Images/31f9a486-61c0-40e6-afca-979f141720b3.png"
+            src="/images/31f9a486-61c0-40e6-afca-979f141720b3.png"
             alt="Buildvenir logo"
-            className="m-0 block h-10 w-auto object-contain p-0"
+            className="m-0 block h-7 w-auto object-contain p-0 md:h-8"
           />
-          <span className={`text-base font-semibold tracking-[-0.04em] ${darkMode ? 'text-slate-50' : 'text-slate-900'}`}>
+          <span className={`text-sm font-semibold tracking-[-0.04em] md:text-base ${darkMode ? 'text-slate-50' : 'text-slate-900'}`}>
             Buildvenir
           </span>
         </Link>
@@ -151,7 +151,7 @@ export function SiteFooter() {
         <div>
           <Link href="/" className="mb-4 flex items-center gap-1.5 p-0">
             <img
-              src="/Images/31f9a486-61c0-40e6-afca-979f141720b3.png"
+              src="/images/31f9a486-61c0-40e6-afca-979f141720b3.png"
               alt="Buildvenir logo"
               className="m-0 block h-10 w-auto object-contain p-0"
             />
